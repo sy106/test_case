@@ -12,7 +12,7 @@ class test2_router(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("a1").click()
+        driver.find_element_by_id("Network").click()
         driver.find_element_by_id("a2").click()
         driver.switch_to_frame("mainifr")
         mode=driver.find_element_by_name("mode")

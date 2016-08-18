@@ -13,7 +13,7 @@ class ping(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("a21").click()
+        driver.find_element_by_id("System").click()
         driver.find_element_by_id("a26").click()
         driver.switch_to_frame("mainifr")
 
