@@ -1,0 +1,54 @@
+#coding=utf-8
+from selenium import webdriver
+import login,set_up,quit
+import unittest, time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+
+
+class test_pin(unittest.TestCase):
+    def test_PIN(self):
+        set_up.setUp(self)
+        driver = self.driver
+        driver.get(self.base_url + "/")
+        login.login(driver)
+        driver.find_element_by_id("Network").click()
+        driver.find_element_by_id("PIN Management ").click()
+        driver.switch_to_frame("mainifr")
+
+        enable=driver.find_element_by_id("enable_radio")
+        enable.click()
+        time.sleep(2)
+
+        pin=driver.find_element_by_id("pinpwd")
+        pin.send_keys("1234")
+
+        sub = driver.find_element_by_id("SubmitBtn")
+        sub.click()
+        time.sleep(3)
+        # 获取网页上的警告信息
+        alert = driver.switch_to_alert()
+        # 接收警告信息
+        alert.accept()
+        time.sleep(2)
+
+        disable = driver.find_element_by_id("disable_radio")
+        disable.click()
+        time.sleep(2)
+
+        pin = driver.find_element_by_id("pinpwd")
+        pin.send_keys("1234")
+
+        sub = driver.find_element_by_id("SubmitBtn")
+        sub.click()
+        time.sleep(3)
+        # 获取网页上的警告信息
+        alert = driver.switch_to_alert()
+        # 接收警告信息
+        alert.accept()
+        time.sleep(2)
+
+        driver.quit()
+
+if __name__ == "__main__":
+    unittest.main()
