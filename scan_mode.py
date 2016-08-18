@@ -12,8 +12,8 @@ class test_method(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("Network").click()
-        driver.find_element_by_id("a4").click()
+        driver.find_element_by_link_text("Network").click()
+        driver.find_element_by_link_text("LTE Settings").click()
         driver.switch_to_frame("mainifr")
 
         con_method=driver.find_element_by_id("scan_mode")

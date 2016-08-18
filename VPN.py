@@ -13,7 +13,7 @@ class test_vpn(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("a20").click()
+        driver.find_element_by_link_tex("VPN").click()
 
         driver.switch_to_frame("mainifr")
 

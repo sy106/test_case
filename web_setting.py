@@ -13,8 +13,8 @@ class http(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("a14").click()
-        driver.find_element_by_id("a22").click()
+        driver.find_element_by_link_tex("System").click()
+        driver.find_element_by_link_tex("WEB Setting").click()
         driver.switch_to_frame("mainifr")
 
         https = driver.find_element_by_id("https_wan")

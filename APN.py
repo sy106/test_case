@@ -13,7 +13,7 @@ class test_APN(unittest.TestCase):
         driver.get(self.base_url + "/")
         login.login(driver)
         driver.find_element_by_link_text("Network").click()
-        driver.find_element_by_id("APN Management").click()
+        driver.find_element_by_link_text("APN Management").click()
         driver.switch_to_frame("mainifr")
 
         APN_NUM=driver.find_element_by_id("select")

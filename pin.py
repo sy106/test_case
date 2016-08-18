@@ -12,8 +12,8 @@ class test_pin(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("Network").click()
-        driver.find_element_by_id("PIN Management ").click()
+        driver.find_element_by_link_text("Network").click()
+        driver.find_element_by_link_text("PIN Management ").click()
         driver.switch_to_frame("mainifr")
 
         enable=driver.find_element_by_id("enable_radio")

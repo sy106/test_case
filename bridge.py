@@ -12,8 +12,8 @@ class test2_bridge(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("Network").click()
-        driver.find_element_by_id("a2").click()
+        driver.find_element_by_link_text("Network").click()
+        driver.find_element_by_link_text("WAN Settings").click()
         driver.switch_to_frame("mainifr")
         mode=driver.find_element_by_xpath("/html/body/form/div/div[2]/div[2]/div[1]/div[2]/select")
         mode.find_element_by_xpath("//option[@value='bridge']").click()
