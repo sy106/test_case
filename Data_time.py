@@ -12,8 +12,8 @@ class Data_time(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_id("a24").click()
-        driver.find_element_by_id("a29").click()
+        driver.find_element_by_link_text("System").click()
+        driver.find_element_by_link_text("Date & Time").click()
         driver.switch_to_frame("mainifr")
 
         enable=driver.find_element_by_name("timeSetupMode")
