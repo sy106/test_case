@@ -1,7 +1,7 @@
 
 
 
-def fun(us='greenpacket',pw='bwro!5ZwWCq_KyJ%4JIpXf'):
+def fun(us='admin',pw='admin'):
      print "success reader username and password!!"
      return us,pw
 """

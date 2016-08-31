@@ -80,11 +80,11 @@ class test_ODU(unittest.TestCase):
          driver.find_element_by_link_text("SIM Lock").click()
          driver.switch_to_frame("mainifr")
 
-         mcc = driver.find_element_by_xpath("/html/body/form/div/div[2]/div[3]/div[1]/div[2]/input")
+         mcc = mcc=driver.find_element_by_id("mcc")
          mcc.clear()
          mcc.send_keys("460")
 
-         mnc = driver.find_element_by_xpath("/html/body/form/div/div[2]/div[3]/div[2]/div[2]/input")
+         mnc = driver.find_element_by_id("mnc")
          mnc.clear()
          mnc.send_keys("11")
          time.sleep(3)
