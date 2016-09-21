@@ -10,7 +10,7 @@ import HTMLTestRunner
 testunit=unittest.TestSuite()
 #将测试用例加入到测试容器(套件)中
 # testunit.addTest(unittest.makeSuite(upload_version.test_up_version))
-testunit.addTest(unittest.makeSuite(reset_to_factory.test_factory))
+  testunit.addTest(unittest.makeSuite(reset_to_factory.test_factory))
 testunit.addTest(unittest.makeSuite(ODU_SMART.test_ODU))
 """
 testunit.addTest(unittest.makeSuite(ODU_login.test_ODU_login))

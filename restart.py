@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class test2_restart(unittest.TestCase):
     def test_login(self):
-        for i in range(20):
+        for i in range(270):
             set_up.setUp(self)
             driver = self.driver
             driver.get(self.base_url + "/")
