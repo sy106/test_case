@@ -14,7 +14,7 @@ class ping(unittest.TestCase):
         driver.get(self.base_url + "/")
         login.login(driver)
         driver.find_element_by_link_text("System").click()
-        driver.find_element_by_link_text("Diagnosis").click()
+        driver.find_element_by_link_text("Diagnostics").click()
         driver.switch_to_frame("mainifr")
 
         ip=driver.find_element_by_id("id_pingTarget")
@@ -23,7 +23,7 @@ class ping(unittest.TestCase):
         time.sleep(2)
 
         subbtn=driver.find_element_by_id("id_btnPingExcute")
-
+        # subbtn = driver.find_element_by_class_name("button_center")
         #print subbtn.text
         subbtn.click()
 

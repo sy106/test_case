@@ -1,7 +1,7 @@
 
 
 
-def fun(us='admin',pw='LTEcpe1BB25F'):
+def fun(us='administrator',pw='administrator'):
      print "success reader username and password!!"
      return us,pw
 """

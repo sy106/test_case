@@ -3,15 +3,18 @@
 
 import unittest
 #这里需要导入测试文件
-import firewall,ODU_login,pin,scan_mode,sim_lock,ODU_SMART,reset_to_factory,upload_version
+import firewall,ODU_login,pin,scan_mode,sim_lock,ODU_SMART,reset_to_factory,upload_version_um,radio_um
 
 import os
-import HTMLTestRunner
+import HTMLTestRunner,restart,ping
 testunit=unittest.TestSuite()
 #将测试用例加入到测试容器(套件)中
 # testunit.addTest(unittest.makeSuite(upload_version.test_up_version))
-  testunit.addTest(unittest.makeSuite(reset_to_factory.test_factory))
-testunit.addTest(unittest.makeSuite(ODU_SMART.test_ODU))
+# testunit.addTest(unittest.makeSuite(reset_to_factory.test_factory))
+for i in range(10):
+      testunit.addTest(unittest.makeSuite(radio_um.radio_on_off))
+      testunit.addTest(unittest.makeSuite(ping.ping))
+
 """
 testunit.addTest(unittest.makeSuite(ODU_login.test_ODU_login))
 testunit.addTest(unittest.makeSuite(firewall.test_firewall))
