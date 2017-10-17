@@ -29,13 +29,14 @@ class test_up_version(unittest.TestCase):
             """
             driver.switch_to_frame("mainifr")
             test = driver.find_element_by_id("fwinfo").text
+            # test = driver.find_element_by_id("version").text
             # test = driver.find_element_by_class_name("content_item_right").text
             print str(datetime.datetime.now())
-            print "目前的版本是：",test
+            print "now the version is：",test
             with open(FILE_DIR, 'a+') as f:
                 f.write(str(datetime.datetime.now())+test)
                 f.write('\n')
-            if test == "IDU-26392-2.0.3-R7-MTN-Irancell":
+            if test == "MH-29644-2.0.3-R5-GP-Smart":
                 driver.refresh
                 time.sleep(2)
                 # driver.switch_to_frame("mainifr")
@@ -43,10 +44,11 @@ class test_up_version(unittest.TestCase):
                 brow = driver.find_element_by_id("file")
                 brow.click()
 
-                os.system("C:\\Users\shenyuan\Documents\upfile2.exe")
-                print str(datetime.datetime.now())+'upgrade to R7-f'
+                # os.system("C:\\Users\shenyuan\Documents\upfile1.exe")
+                os.system("C:\\Users\Administrator\Personal\upfile1.exe")
+                print str(datetime.datetime.now())+'upgrade to MH-29644-2.0.3-R5-F-GP-Smart'
                 with open(FILE_DIR, 'a+') as f:
-                    f.write(str(datetime.datetime.now())+'upgrade to R7-f')
+                    f.write(str(datetime.datetime.now())+'upgrade to MH-29644-2.0.3-R5-F-GP-Smart')
                     f.write('\n')
             else:
                 driver.refresh
@@ -56,26 +58,26 @@ class test_up_version(unittest.TestCase):
                 brow = driver.find_element_by_id("file")
                 brow.click()
 
-                os.system("C:\\Users\shenyuan\Documents\upfile.exe")
-                print str(datetime.datetime.now())+'upgrade to R7'
+                os.system("C:\\Users\Administrator\Personal\upfile2.exe")
+                print str(datetime.datetime.now())+'upgrade to MH-29644-2.0.3-R5-GP-Smart'
                 with open(FILE_DIR, 'a+') as f:
-                    f.write(str(datetime.datetime.now())+'升级到R7')
+                    f.write(str(datetime.datetime.now())+'upgrade to MH-29644-2.0.3-R5-GP-Smart')
                     f.write('\n')
             time.sleep(2)
 
             sub = driver.find_element_by_id("btnUlVersion")
             sub.click()
-            time.sleep(340)
+            time.sleep(310)
 
             #time.sleep(5)
 
             driver.quit()
             j = i + 1
             driver.refresh
-            print str(datetime.datetime.now())+'升级完成，这是升级第%s次成功'%j
+            print str(datetime.datetime.now())+'update success，this is %s times success'%j
             j=i+1
             with open(FILE_DIR, 'a+') as f:
-                f.write(str(datetime.datetime.now())+'升级完成，这是升级第%s次成功'%j)
+                f.write(str(datetime.datetime.now())+'update success，this is %s times success'%j)
                 f.write('\n')
 
 

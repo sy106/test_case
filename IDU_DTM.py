@@ -28,77 +28,72 @@ class test_ODU(unittest.TestCase):
           login.login(driver)
 
           driver.find_element_by_link_text("Network").click()
-          driver.find_element_by_link_text("Scan Mode").click()
+          driver.find_element_by_link_text("LTE Settings").click()
           driver.switch_to_frame("mainifr")
 
-          con_method = driver.find_element_by_id("scan_mode")
-          con_method.find_element_by_xpath("//option[@value='freqpreferred']").click()
-
-          sub = driver.find_element_by_id("SubmitBtn")
-          sub.click()
-          time.sleep(3)
-
+          con_method = driver.find_element_by_link_text("Click For Setting")
+          con_method.click()
      # 获取网页上的警告信息
-          alert = driver.switch_to_alert()
-     # 接收警告信息
-          alert.accept()
-          time.sleep(2)
+     #      alert = driver.switch_to_alert()
+     # # 接收警告信息
+     #      alert.accept()
+     #      time.sleep(2)
+     #
+     #      con_method = driver.find_element_by_id("scan_mode")
+     #      con_method.find_element_by_xpath("//option[@value='celllock']").click()
+     #
+     #      sub = driver.find_element_by_id("SubmitBtn")
+     #      sub.click()
+     #      time.sleep(3)
+     # # 获取网页上的警告信息
+     #      alert = driver.switch_to_alert()
+     # # 接收警告信息
+     #      alert.accept()
+     #      time.sleep(2)
+     #
+     #      con_method = driver.find_element_by_id("scan_mode")
+     #      con_method.find_element_by_xpath("//option[@value='fullband']").click()
+     #
+     #      sub = driver.find_element_by_id("SubmitBtn")
+     #      sub.click()
+     #      time.sleep(10)
+     # # 获取网页上的警告信息
+     #      alert = driver.switch_to_alert()
+     # # 接收警告信息
+     #      alert.accept()
+     #      time.sleep(20)
+     #      driver.quit()
 
-          con_method = driver.find_element_by_id("scan_mode")
-          con_method.find_element_by_xpath("//option[@value='celllock']").click()
-
-          sub = driver.find_element_by_id("SubmitBtn")
-          sub.click()
-          time.sleep(3)
-     # 获取网页上的警告信息
-          alert = driver.switch_to_alert()
-     # 接收警告信息
-          alert.accept()
-          time.sleep(2)
-
-          con_method = driver.find_element_by_id("scan_mode")
-          con_method.find_element_by_xpath("//option[@value='fullband']").click()
-
-          sub = driver.find_element_by_id("SubmitBtn")
-          sub.click()
-          time.sleep(10)
-     # 获取网页上的警告信息
-          alert = driver.switch_to_alert()
-     # 接收警告信息
-          alert.accept()
-          time.sleep(20)
-          driver.quit()
-
-     def test_sim_lock(self):
-         u"""SIM LOCK"""
-         set_up.setUp(self)
-         driver = self.driver
-         driver.get(self.base_url + "/")
-         login.login(driver)
-
-         driver.find_element_by_link_text("Network").click()
-         driver.find_element_by_link_text("SIM Lock").click()
-         driver.switch_to_frame("mainifr")
-
-         mcc = mcc=driver.find_element_by_id("mcc")
-         mcc.clear()
-         mcc.send_keys("460")
-
-         mnc = driver.find_element_by_id("mnc")
-         mnc.clear()
-         mnc.send_keys("11")
-         time.sleep(3)
-
-         btn = driver.find_element_by_id("submit")
-         btn.click()
-         time.sleep(3)
-
-         # 获取网页上的警告信息
-         alert = driver.switch_to_alert()
-         # 接收警告信息
-         alert.accept()
-         time.sleep(2)
-         driver.quit()
+     # def test_sim_lock(self):
+     #     u"""SIM LOCK"""
+     #     set_up.setUp(self)
+     #     driver = self.driver
+     #     driver.get(self.base_url + "/")
+     #     login.login(driver)
+     #
+     #     driver.find_element_by_link_text("Network").click()
+     #     driver.find_element_by_link_text("SIM Lock").click()
+     #     driver.switch_to_frame("mainifr")
+     #
+     #     mcc = mcc=driver.find_element_by_id("mcc")
+     #     mcc.clear()
+     #     mcc.send_keys("460")
+     #
+     #     mnc = driver.find_element_by_id("mnc")
+     #     mnc.clear()
+     #     mnc.send_keys("11")
+     #     time.sleep(3)
+     #
+     #     btn = driver.find_element_by_id("submit")
+     #     btn.click()
+     #     time.sleep(3)
+     #
+     #     # 获取网页上的警告信息
+     #     alert = driver.switch_to_alert()
+     #     # 接收警告信息
+     #     alert.accept()
+     #     time.sleep(2)
+     #     driver.quit()
 
      def test_login(self):
          u"""开启防火墙"""
@@ -302,7 +297,7 @@ class test_ODU(unittest.TestCase):
          driver.get(self.base_url + "/")
          login.login(driver)
          driver.find_element_by_link_text("System").click()
-         driver.find_element_by_link_text("Diagnostics").click()
+         driver.find_element_by_link_text("Diagnosis").click()
          driver.switch_to_frame("mainifr")
 
          ip = driver.find_element_by_id("id_pingTarget")

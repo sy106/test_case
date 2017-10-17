@@ -7,8 +7,9 @@ def login(self):
 
     self.find_element_by_name("username").send_keys(us)
     self.find_element_by_name("password").send_keys(pw)
-    self.find_element_by_id("submit").click()
-    #self.find_element_by_link_text("Login").click()
+    self.find_element_by_id("button").click()
+    # self.find_element_by_link_text("Login").click()
+    # self.find_element_by_name("submit").click()
 
 """
 def login(self):

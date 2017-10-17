@@ -27,7 +27,7 @@ class test_factory(unittest.TestCase):
         # 接收警告信息
         alert.accept()
 
-        time.sleep(80)
+        time.sleep(120)
         driver.quit()
 if __name__ == "__main__":
     unittest.main()

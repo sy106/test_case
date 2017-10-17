@@ -1,19 +1,21 @@
 #coding=utf-8
 #___author____ = 'yuanshen'
 
-import unittest
+import unittest,ODU_SMART
 #这里需要导入测试文件
 import firewall,ODU_login,pin,scan_mode,sim_lock,ODU_SMART,reset_to_factory,upload_version_um,radio_um
-
+import fota_updata
 import os
 import HTMLTestRunner,restart,ping
 testunit=unittest.TestSuite()
 #将测试用例加入到测试容器(套件)中
-# testunit.addTest(unittest.makeSuite(upload_version.test_up_version))
+# testunit.addTest(unittest.makeSuite(ODU_SMART.test_ODU))
+testunit.addTest(unittest.makeSuite(fota_updata.test_FOAT))
 # testunit.addTest(unittest.makeSuite(reset_to_factory.test_factory))
-for i in range(10):
-      testunit.addTest(unittest.makeSuite(radio_um.radio_on_off))
-      testunit.addTest(unittest.makeSuite(ping.ping))
+# for i in range(10):
+# testunit.addTest(unittest.makeSuite(upload_version_MTN.test_up_version))
+#       testunit.addTest(unittest.makeSuite(radio_um.radio_on_off))
+      # testunit.addTest(unittest.makeSuite(ping.ping))
 
 """
 testunit.addTest(unittest.makeSuite(ODU_login.test_ODU_login))
@@ -34,7 +36,7 @@ for a in caselist:
 #runner = unittest.TextTestRunner()
 #runner.run(testunit)
 #定义个报告存放路径，支持相对路径。
-filename = 'D:\\Python27\\report\\result2.html'
+filename = 'E:\\Python27\\report\\result.html'
 fp = file(filename, 'wb')
 runner =HTMLTestRunner.HTMLTestRunner(
       stream=fp,

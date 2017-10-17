@@ -13,7 +13,7 @@ class test_vpn(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         login.login(driver)
-        driver.find_element_by_link_tex("VPN").click()
+        driver.find_element_by_link_text("VPN").click()
 
         driver.switch_to_frame("mainifr")
 
@@ -24,15 +24,15 @@ class test_vpn(unittest.TestCase):
         vpn_ser=driver.find_element_by_xpath("/html/body/form/div/div[2]/div[4]/div[1]/div[2]/input")
 
         vpn_ser.clear()
-        vpn_ser.send_keys("zmtel.com")
+        vpn_ser.send_keys("172.16.34.120")
         time.sleep(2)
         username=driver.find_element_by_xpath("/html/body/form/div/div[2]/div[4]/div[2]/div[2]/input")
         username.clear()
-        username.send_keys("yuanshen")
+        username.send_keys("test")
         time.sleep(2)
         password=driver.find_element_by_xpath("/html/body/form/div/div[2]/div[4]/div[3]/div[2]/input")
         password.clear()
-        password.send_keys("TDtech994106")
+        password.send_keys("test")
         time.sleep(2)
 
         sub=driver.find_element_by_id("SubmitBtn")

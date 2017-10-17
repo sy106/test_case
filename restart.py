@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class test2_restart(unittest.TestCase):
     def test_login(self):
-        # for i in range(10):
+        for i in range(200):
             set_up.setUp(self)
             driver = self.driver
             driver.get(self.base_url + "/")
@@ -20,6 +20,7 @@ class test2_restart(unittest.TestCase):
             reboot=driver.find_element_by_id("btnReboot")
 
             reboot.click()
+            print "this is %s time restart!"%(i+1)
 
 
             # 获取网页上的警告信息
@@ -27,7 +28,8 @@ class test2_restart(unittest.TestCase):
             # 接收警告信息
             alert.accept()
 
-            time.sleep(75)
+            time.sleep(125)
             driver.quit()
+            # print'this is reset',i+1
 if __name__ == "__main__":
     unittest.main()

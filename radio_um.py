@@ -30,7 +30,7 @@ class radio_on_off(unittest.TestCase):
         # driver.switch_to_frame("mainifr")
         driver.switch_to_default_content()
         driver.find_element_by_link_text("Network").click()
-        driver.find_element_by_link_text("LTE Settings").click()
+        driver.find_element_by_link_text("4G Settings").click()
         driver.refresh
         driver.switch_to_frame("mainifr")
         time.sleep(10)
@@ -67,7 +67,7 @@ class radio_on_off(unittest.TestCase):
             print "turn_on!now the status is：Connected!"
         else:
             # print '第%s次连接状态为状态为：>>%s'%(i+1,text1)
-            print'abnormal !now the status is：>>%s'%text1
+            print'abnormal !now the status is：>>',text1
         driver.quit()
 
 
